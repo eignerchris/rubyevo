@@ -1,0 +1,4 @@
+short tutorial on genetic/evolutionary programming with goal of evolving 32 member array of 1's.
+run using "ruby evolve.rb NUM" where NUM is the number of offspring to be created at each generation.
+
+see blog post at http://eignerchris.tumblr.com/post/428590094/genetic-programming-101-ruby
