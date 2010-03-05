@@ -18,20 +18,20 @@ top10 = alphas(SEEDS)
 
 i = 0
 loop do
-	case top10.include? SPARTAN
-	when true
-		winners = top10.collect {|a| a if a.is_spartan?}.compact
-		puts "#{winners.size} member(s) reached spartan status!"
-		puts "completed in #{Time.now - start} seconds"
-		break
-	else
-		puts "*** ALPHAS FROM GENERATION: #{i} ***"
-		offspring = []
-		NUM_OFFSPRING.times do |j|
-			offspring << mate(top10.random, top10.random)
-		end 
-		top10 = alphas(offspring)
-		print_alpha_stats(top10)
-		i += 1
-	end
+  case top10.include? SPARTAN
+  when true
+    winners = top10.collect {|a| a if a.is_spartan?}.compact
+    puts "#{winners.size} member(s) reached spartan status!"
+    puts "completed in #{Time.now - start} seconds"
+    break
+  else
+    puts "*** ALPHAS FROM GENERATION: #{i} ***"
+    offspring = []
+    NUM_OFFSPRING.times do |j|
+      offspring << mate(top10.random, top10.random)
+    end 
+    top10 = alphas(offspring)
+    print_alpha_stats(top10)
+    i += 1
+  end
 end
